@@ -10,19 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_201502) do
+ActiveRecord::Schema.define(version: 2018_10_29_212449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "lessons", force: :cascade do |t|
-    t.string "timeslot", null: false
-    t.bigint "student_id"
+  create_table "contracts", force: :cascade do |t|
     t.bigint "teacher_id"
+    t.bigint "student_id"
+    t.index ["student_id"], name: "index_contracts_on_student_id"
+    t.index ["teacher_id"], name: "index_contracts_on_teacher_id"
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_lessons_on_student_id"
-    t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.bigint "instrument_id"
+    t.bigint "user_id"
+    t.index ["instrument_id"], name: "index_interests_on_instrument_id"
+    t.index ["user_id"], name: "index_interests_on_user_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.bigint "contract_id"
+    t.index ["contract_id"], name: "index_lessons_on_contract_id"
   end
 
   create_table "users", force: :cascade do |t|
