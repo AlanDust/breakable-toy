@@ -11,11 +11,12 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :role, presence: true
 
-  has_many :taught_lessons, class_name: "Lesson", foreign_key: :teacher_id
-  has_many :students, through: :taught_lessons, source: :student
+  has_many :student_contracts, class_name: "Contract", foreign_key: :student_id
+  has_many :teachers, through: :student_contract, source: :teacher
 
-  has_many :student_lessons, class_name: "Lesson", foreign_key: :student_id
-  has_many :teachers, through: :student_lessons, source: :teacher
+# methods that a teacher would call
+  has_many :taught_contract, class_name: "Contract", foreign_key: :teacher_id
+  has_many :students, through: :taught_contract, source: :student
 
   def teacher?
     role == "teacher"
