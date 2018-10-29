@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :encrypted_password, presence: true
   validates :age, presence: true
+  validates :role, presence: true
 
   has_many :taught_lessons, class_name: "Lesson", foreign_key: :teacher_id
   has_many :students, through: :taught_lessons, source: :student
@@ -17,7 +18,7 @@ class User < ApplicationRecord
   has_many :teachers, through: :student_lessons, source: :teacher
 
   def teacher?
-    tole == "teacher"
+    role == "teacher"
   end
 
 end

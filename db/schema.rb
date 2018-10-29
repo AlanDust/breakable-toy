@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_204832) do
+ActiveRecord::Schema.define(version: 2018_10_29_201502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "timeslot", null: false
+    t.bigint "student_id"
+    t.bigint "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_lessons_on_student_id"
+    t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,18 +33,15 @@ ActiveRecord::Schema.define(version: 2018_10_19_204832) do
     t.string "profile_photo"
     t.integer "age", null: false
     t.string "role", default: "student", null: false
+    t.string "ability"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "students_id"
-    t.bigint "teachers_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["students_id"], name: "index_users_on_students_id"
-    t.index ["teachers_id"], name: "index_users_on_teachers_id"
   end
 
 end
