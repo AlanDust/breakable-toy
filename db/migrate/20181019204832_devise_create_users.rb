@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :profile_photo
       t.integer :age, null: false, default: ""
       t.string :role, null: false, default: "student"
+      t.string :ability
 
       ## Recoverable
       t.string   :reset_password_token
@@ -26,8 +27,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Lockable
 
       t.timestamps null: false
-      t.belongs_to :students
-      t.belongs_to :teachers
     end
 
     add_index :users, :email,                unique: true
