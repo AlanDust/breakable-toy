@@ -35,13 +35,14 @@ class InstrumentContainer extends Component {
           key={instrument.id}
           id={instrument.id}
           name={instrument.name}
+          picture={instrument.picture}
         />
       )
   })
     return (
       <div>
-        <h1> Welcome to the Music Lesson Teacher Finder </h1>
-        <h3> Click on an instrument to find a teacher</h3>
+        <h1 className="welcome"> Welcome to the Music Lesson Teacher Finder </h1>
+        <h3 className="sub-welcome"> Click on an instrument to find a teacher</h3>
         {instrumentTiles}
       </div>
     )

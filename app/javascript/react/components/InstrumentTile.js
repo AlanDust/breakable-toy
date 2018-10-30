@@ -5,9 +5,8 @@ const InstrumentTile = props => {
 
   return(
     <div className="large-3 medium-6 small-12 column">
-      <div>
-        <h3>{props.name}</h3>
-      </div>
+      <h3 className="instrument-name">{props.name}</h3>
+      <img className="instrument-image" src={props.picture} />
     </div>
   )
 }

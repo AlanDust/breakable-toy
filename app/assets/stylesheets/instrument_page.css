@@ -1,0 +1,33 @@
+.instrument-image {
+  height: 15rem;
+  width: 15rem;
+  margin-left: 2rem;
+  padding-bottom: 1rem;
+  transition: all 1s ease;
+  border-radius: 15%;
+}
+
+.instrument-image:hover {
+  border-radius: 50%;
+}
+
+.welcome {
+  font-family: 'Italianno', cursive;
+  text-align: center;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.sub-welcome {
+  font-family: 'Italianno', cursive;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.instrument-name {
+  margin-left: 2rem;
+  font-family: 'Italianno', cursive;
+  font-weight: 500;
+  font-size: 2rem;
+}
