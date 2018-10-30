@@ -18,6 +18,9 @@ class User < ApplicationRecord
   has_many :taught_contract, class_name: "Contract", foreign_key: :teacher_id
   has_many :students, through: :taught_contract, source: :student
 
+  has_many :interests
+  has_many :instruments, through: :interest
+
   def teacher?
     role == "teacher"
   end
