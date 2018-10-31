@@ -12,6 +12,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :age, null: false, default: ""
       t.string :role, null: false, default: "student"
       t.string :ability
+      t.integer :zip
+      t.string :bio
+      t.string :lesson_location
 
       ## Recoverable
       t.string   :reset_password_token
