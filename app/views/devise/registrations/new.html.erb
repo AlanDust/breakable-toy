@@ -24,6 +24,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :zip, "Zip Code" %>
+    <%= f.text_field :zip, autofocus: true, autocomplete: "zip" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role, "Are you a teacher or a student" %>
+    <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
