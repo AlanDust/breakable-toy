@@ -4,6 +4,6 @@ class Instrument < ApplicationRecord
   validates :picture, presence: true
 
   has_many :interests
-  has_many :users, through: :interest
+  has_many :users, through: :interests
 
 end

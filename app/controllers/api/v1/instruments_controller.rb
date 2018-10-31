@@ -22,6 +22,6 @@ class Api::V1::InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:type)
+    params.require(:instrument).permit(:name)
   end
 end

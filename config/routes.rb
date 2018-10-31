@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :instruments, only: [:index, :create, :show]
+      resources :users, only: [:index, :create, :show]
+      resources :interests, only: [:index, :create, :show]
     end
   end
   get '/instruments', to: 'homes#index'
-
+  get '/instruments/:id', to: 'homes#index'
 end
