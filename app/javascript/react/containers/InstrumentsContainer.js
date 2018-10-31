@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import InstrumentTile from '../components/InstrumentTile'
-
+import TeachersContainer from './TeachersContainer'
 
 class InstrumentContainer extends Component {
   constructor (props) {
     super(props);
     this.state = {
       instrumentList: [],
+      userList: [],
       error: ""
     }
   }
@@ -38,7 +39,8 @@ class InstrumentContainer extends Component {
           picture={instrument.picture}
         />
       )
-  })
+    })
+
     return (
       <div>
         <h1 className="welcome"> Welcome to the Music Lesson Teacher Finder </h1>
