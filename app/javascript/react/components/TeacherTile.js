@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-const InstrumentTile = props => {
+class TeacherTile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
 
-  return(
-    <div className="large-12 medium-12 small-12 column users">
-      <div className="large-2 medium-2 small-12 column">
-        <h3>{props.picture}</h3>
+  render() {
+    return(
+      <div className="large-12 medium-12 small-12 column users">
+        <Link to={`/instruments/${this.props.instrument_id}/users/${this.props.id}`}>
+          <div className="large-1 medium-1 small-12 column">
+            <h3>{this.props.picture}</h3>
+          </div>
+          <div className="large-6 medium-6 small-12 column">
+            <h1>{this.props.firstName} {this.props.lastName}</h1>
+            <h2>{this.props.email}</h2>
+            <h3>{this.props.lessonLocation}</h3>
+          </div>
+        </Link>
+
+        <div className="large-4 medium-4 small-12 column bio">
+          <p>{this.props.bio}</p>
+        </div>
       </div>
-      <div className="large-6 medium-6 small-12 column">
-        <h1>{props.firstName} {props.lastName}</h1>
-        <h2>{props.email}</h2>
-        <h3>{props.lessonLocation}</h3>
-      </div>
-      <div className="large-4 medium-4 small-12 column bio">
-        <p>{props.bio}</p>
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
-export default InstrumentTile
+export default TeacherTile

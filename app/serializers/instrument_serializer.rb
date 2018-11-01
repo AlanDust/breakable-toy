@@ -3,4 +3,5 @@ class InstrumentSerializer < ActiveModel::Serializer
 
   has_many :interests
   has_many :users, through: :interests
+
 end

@@ -5,11 +5,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :instruments, only: [:index, :create, :show]
-      resources :users, only: [:index, :create, :show]
+      resources :instruments, only: [:index, :create, :show] do
+        resources :users, only: [:index, :create, :show]
+      end
       resources :interests, only: [:index, :create, :show]
     end
   end
   get '/instruments', to: 'homes#index'
   get '/instruments/:id', to: 'homes#index'
+  get '/instruments/:instrument_id/users/:id', to: 'homes#index'
+
 end
