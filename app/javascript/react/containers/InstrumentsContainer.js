@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import InstrumentTile from '../components/InstrumentTile'
-import TeachersContainer from './TeachersContainer'
 
 class InstrumentContainer extends Component {
   constructor (props) {
