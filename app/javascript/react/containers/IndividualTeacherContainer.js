@@ -35,7 +35,7 @@ class IndividualTeacherContainer extends Component {
           key = {this.state.teacherData.id}
           id = {this.state.teacherData.id}
           age = {this.state.teacherData.age}
-          bio = {this.state.teacherData.bio}
+          long_bio = {this.state.teacherData.long_bio}
           email = {this.state.teacherData.email}
           first_name = {this.state.teacherData.first_name}
           last_name = {this.state.teacherData.last_name}

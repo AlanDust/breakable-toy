@@ -1,0 +1,25 @@
+.teacher-show-name {
+  font-family: 'Italianno', cursive;
+  margin: 3rem;
+  padding-top: 5rem;
+}
+
+.teacher-show-bio {
+  font-family: 'Italianno';
+  margin-left: 15rem;
+  margin-right: 15rem;
+  margin-top: 1rem;
+}
+
+.teacher-show-photo {
+  font-family: 'Italianno', cursive;
+  margin: 3rem;
+  padding-top: 3rem;
+}
+
+.show-page-image {
+  margin-top: 2rem;
+  width: 80%;
+  height: auto;
+  margin-bottom: 5rem;
+}

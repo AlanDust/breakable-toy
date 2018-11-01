@@ -7,18 +7,14 @@ const IndividualTeacherTile = props => {
     <div>
       <div>
         <div className="large-6 medium-6 small-12 column">
-          <h1>{props.first_name} {props.last_name}</h1>
-          <h2>{props.email}</h2>
-          <h2>{props.lesson_location} {props.zip}</h2>
+          <h1 className="teacher-show-name">{props.first_name} {props.last_name}</h1>
+          <h2 className="teacher-show-name">{props.email}</h2>
+          <h2 className="teacher-show-name">{props.lesson_location} {props.zip}</h2>
         </div>
         <div className="large-6 medium-6 small-12 column">
-          <h1>Profile Photo will go here!</h1>
-          <h1>Profile Photo will go here!</h1>
-          <h1>Profile Photo will go here!</h1>
-          <h1>{props.profile_photo}</h1>
+          <img className="show-page-image" src={props.profile_photo} />
         </div>
-
-        <h3>{props.bio}</h3>
+        <h3 className="teacher-show-bio">{props.long_bio}</h3>
       </div>
     </div>
   )

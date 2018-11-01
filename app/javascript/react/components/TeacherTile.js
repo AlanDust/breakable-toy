@@ -13,7 +13,7 @@ class TeacherTile extends Component {
       <div className="large-12 medium-12 small-12 column users">
         <Link to={`/instruments/${this.props.instrument_id}/users/${this.props.id}`}>
           <div className="large-1 medium-1 small-12 column">
-            <h3>{this.props.picture}</h3>
+            <img className="index-page-image" src={this.props.picture} />
           </div>
           <div className="large-6 medium-6 small-12 column">
             <h1>{this.props.firstName} {this.props.lastName}</h1>
@@ -23,7 +23,7 @@ class TeacherTile extends Component {
         </Link>
 
         <div className="large-4 medium-4 small-12 column bio">
-          <p>{this.props.bio}</p>
+          <p>{this.props.short_bio}</p>
         </div>
       </div>
     )

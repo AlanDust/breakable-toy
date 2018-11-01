@@ -51,7 +51,8 @@ ActiveRecord::Schema.define(version: 2018_10_29_212449) do
     t.string "role", default: "student", null: false
     t.string "ability"
     t.integer "zip"
-    t.string "bio"
+    t.text "short_bio"
+    t.text "long_bio"
     t.string "lesson_location"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
