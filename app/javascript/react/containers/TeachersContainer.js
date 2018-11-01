@@ -37,7 +37,7 @@ class TeachersContainer extends Component {
           lastName={user.last_name}
           email={user.email}
           picture={user.profile_photo}
-          bio={user.bio}
+          short_bio={user.short_bio}
           lessonLocation={user.lesson_location}
           zip={user.zip}
           instrument_id={this.props.params.id}

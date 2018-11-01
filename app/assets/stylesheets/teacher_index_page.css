@@ -3,8 +3,14 @@
   padding-right: 3rem;
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #999999);
   padding-bottom: 3rem;
+  font-family: 'Italianno', cursive;
 }
 
 .bio {
   margin-top: 2rem;
+  font-family: 'Italianno';
+}
+
+.index-page-image {
+  margin-top: 3rem;
 }

@@ -13,7 +13,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :role, null: false, default: "student"
       t.string :ability
       t.integer :zip
-      t.string :bio
+      t.text :short_bio
+      t.text :long_bio
       t.string :lesson_location
 
       ## Recoverable
