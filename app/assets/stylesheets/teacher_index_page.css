@@ -1,0 +1,10 @@
+.users {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #999999);
+  padding-bottom: 3rem;
+}
+
+.bio {
+  margin-top: 2rem;
+}
