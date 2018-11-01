@@ -5,12 +5,12 @@ class TeachersContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        userList: []
+        userList: [],
+        current_user: {}
       }
   }
 
   componentDidMount() {
-    // fetch(`/api/v1/users/${this.props.params.id}`)
     fetch(`/api/v1/instruments/${this.props.params.id}`)
     .then(response => {
         if (response.ok) {
@@ -23,9 +23,7 @@ class TeachersContainer extends Component {
       })
     .then((response) => response.json())
     .then((data) => {
-      this.setState({
-        userList: data.users
-      })
+      this.setState({ userList: data.users, current_user: data.current_user })
     })
   }
 
@@ -42,6 +40,7 @@ class TeachersContainer extends Component {
           bio={user.bio}
           lessonLocation={user.lesson_location}
           zip={user.zip}
+          instrument_id={this.props.params.id}
         />
       )
     })

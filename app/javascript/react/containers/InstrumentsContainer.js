@@ -7,7 +7,8 @@ class InstrumentContainer extends Component {
     this.state = {
       instrumentList: [],
       userList: [],
-      error: ""
+      error: "",
+      current_user: {}
     }
   }
 
@@ -24,11 +25,12 @@ class InstrumentContainer extends Component {
   })
   .then((response) => response.json())
   .then((data) => {
-    this.setState({ instrumentList: data })
+    this.setState({ instrumentList: data.instruments, current_user: data.current_user })
   })
 }
 
   render() {
+
     let instrumentTiles = this.state.instrumentList.map(instrument => {
       return(
         <InstrumentTile
@@ -40,10 +42,17 @@ class InstrumentContainer extends Component {
       )
     })
 
+    let greeting
+    if (this.state.current_user.role === "teacher"){
+      greeting = "Click on an instrument to add yourself as a teacher"
+    } else {
+      greeting = "Click on an instrument to find a teacher"
+    }
+
     return (
       <div>
         <h1 className="welcome"> Welcome to the Music Lesson Teacher Finder </h1>
-        <h3 className="sub-welcome"> Click on an instrument to find a teacher</h3>
+        <h3 className="sub-welcome"> {greeting} </h3>
         {instrumentTiles}
       </div>
     )

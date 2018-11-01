@@ -2,7 +2,7 @@ class Api::V1::InstrumentsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Instrument.all
+    render json: { instruments: Instrument.all, current_user: current_user }
   end
 
   def create
