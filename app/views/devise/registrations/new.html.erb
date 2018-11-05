@@ -1,53 +1,70 @@
-<h2>Sign up</h2>
+<h2 class="sign-up">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :first_name, "First Name" %>
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
+  <div class="form-div">
+    <div class="field">
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :last_name, "Last Name" %>
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-  </div>
+    <div class="field">
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :age, "Age" %>
-    <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
-  </div>
+    <div class="field">
+      <%= f.label :age, "Age" %>
+      <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :zip, "Zip Code" %>
-    <%= f.text_field :zip, autofocus: true, autocomplete: "zip" %>
-  </div>
+    <div class="field">
+      <%= f.label :zip, "Zip Code" %>
+      <%= f.text_field :zip, autofocus: true, autocomplete: "zip" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :role, "Are you a teacher or a student" %>
-    <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
-  </div>
+    <div class="field">
+      <%= f.label :role, "Are you a teacher or a student" %>
+      <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :short_bio, "Short Biography (only fill out if you are a teacher)" %>
+      <%= f.text_field :short_bio, autofocus: true, autocomplete: "short_bio" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :long_bio, "Long Biography (only fill out if you are a teacher)" %>
+      <%= f.text_field :long_bio, autofocus: true, autocomplete: "long_bio" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class="field">
+      <%= f.label :lesson_location, "Where will your lessons take place? (City, State - only fill out if you are a teacher)" %>
+      <%= f.text_field :lesson_location, autofocus: true, autocomplete: "lesson_location" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
   </div>
 <% end %>
 

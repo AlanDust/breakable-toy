@@ -1,0 +1,21 @@
+.sign-up {
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Italianno';
+}
+
+.log-in {
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Italianno';
+}
+
+.field label{
+  font-size: 2rem;
+  font-family: 'Italianno';
+}
+
+.form-div {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}

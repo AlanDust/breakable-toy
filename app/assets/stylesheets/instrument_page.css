@@ -12,14 +12,14 @@
 }
 
 .welcome {
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
   text-align: center;
   font-weight: 700;
   font-size: 3rem;
 }
 
 .sub-welcome {
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
   text-align: center;
   font-weight: 500;
   font-size: 2rem;
@@ -27,7 +27,7 @@
 
 .instrument-name {
   margin-left: 2rem;
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
   font-weight: 500;
   font-size: 2rem;
 }

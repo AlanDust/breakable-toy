@@ -14,3 +14,43 @@
 .index-page-image {
   margin-top: 3rem;
 }
+
+.delete-button {
+  float: center;
+  margin-top: 5px;
+  height: 10px;
+  width: 2px;
+  color: black;
+  background-color: inherit;
+}
+
+.delete-button:hover{
+  background-color: #999999;
+}
+
+.delete-x {
+  margin-bottom: 10px;
+}
+
+.add-teacher-button {
+  text-align: center;
+  background-color: inherit;
+  color: black;
+  font-family: 'Italianno';
+
+}
+
+.add-teacher-button:hover{
+  background-color: #999999;
+}
+
+.center-teacher-button {
+  text-align: center;
+}
+
+.instrument-lesson-teachers-heading p{
+  text-align: center;
+  font-family: 'Italianno';
+  font-size: 5rem;
+  background-color: #999999;
+}
