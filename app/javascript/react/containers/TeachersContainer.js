@@ -8,6 +8,9 @@ class TeachersContainer extends Component {
       userList: [],
       current_user: {},
       errors: [],
+      interests: [],
+      interestId: "",
+      currentInstrument: "",
       error: ""
     }
     this.addTeacher = this.addTeacher.bind(this)
@@ -59,17 +62,26 @@ class TeachersContainer extends Component {
   }
 
   handleClick(event) {
-    debugger
-      let payload = {
-        interest: {instrument_id: this.props.params.id, user_id: this.state.current_user.id}
+    let payload = {
+      interest: {instrument_id: this.props.params.id, user_id: this.state.current_user.id}
+    }
+    let interests = this.state.interests
+
+    interests.forEach((interest) => {
+      if (interest.user_id === this.state.current_user.id) {
+        this.setState({ interestId: interest.id})
       }
+    })
+    console.log("In handleClick")
+    console.log(this.state.interestId)
     this.deleteInterest(payload);
   }
 
   deleteInterest(payload) {
     event.preventDefault();
-    fetch(`/api/v1/instruments/${this.props.params.id}/interests/:id.json`, {
-      //this.state.current_user.id
+    console.log("In handleClick")
+    console.log(this.state.interestId)
+    fetch(`/api/v1/instruments/${this.props.params.id}/interests/delete`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
@@ -128,6 +140,14 @@ class TeachersContainer extends Component {
     .then((response) => response.json())
     .then((data) => {
       this.setState({ userList: data.users})
+      return data;
+    })
+    .then((response) => {
+      this.setState({ interests: response.interests })
+      return response;
+    })
+    .then((response) => {
+      this.setState({ currentInstrument: response.name})
     })
   }
 
@@ -153,17 +173,21 @@ class TeachersContainer extends Component {
         />
       )
     })
-
     let addTeacherFeature
     if (this.state.current_user.role === "teacher"){
-      addTeacherFeature = <button className="add-teacher-button" onClick={this.handleSubmit}>Click Here if you want to add yourself as a teacher to this instrument!</button>
+      addTeacherFeature = <button className="add-teacher-button" onClick={this.handleSubmit}>Click Here if you want to add yourself as a teacher for {this.state.currentInstrument}!</button>
     } else {
       addTeacherFeature = "Click on a teacher to learn more!"
     }
 
     return(
       <div>
-        {addTeacherFeature}
+        <div className="instrument-lesson-teachers-heading">
+          <p>{this.state.currentInstrument} Lesson Teachers</p>
+        </div>
+        <div className="center-teacher-button">
+          {addTeacherFeature}
+        </div>
         {users}
       </div>
     )

@@ -1,7 +1,8 @@
 .teacher-show-name {
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
   margin: 3rem;
   padding-top: 5rem;
+  text-align: center;
 }
 
 .teacher-show-bio {
@@ -12,7 +13,7 @@
 }
 
 .teacher-show-photo {
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
   margin: 3rem;
   padding-top: 3rem;
 }
