@@ -12,6 +12,7 @@ const App = (props) => {
       <Route path='/instruments/:id' >
         <IndexRoute component={TeachersContainer} />
         <Route path='/instruments/:instrument_id/users/:id' component={IndividualTeacherContainer} />
+        <Route path='/instruments/instrument_id/users' component={TeachersContainer} />
       </Route>
     </Router>
   )

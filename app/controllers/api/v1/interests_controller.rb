@@ -2,12 +2,14 @@ class Api::V1::InterestsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Interest.all
+    render json: { interests: Interest.all, current_user: current_user }
   end
 
   def create
-  interest = Interest.new(interest_params)
-
+    interest = Interest.new(
+      instrument_id: interest_params[:instrument_id],
+      user: current_user
+    )
     if interest.save
       render json: interest
     else
@@ -16,11 +18,17 @@ class Api::V1::InterestsController < ApplicationController
   end
 
   def show
-    render json: Interest.find(params[:id])
+    render json: { interests: Interest.find(params[:id]), current_user: current_user }
+  end
+
+  def destroy
+    interest = Interest.find_by(instrument_id: params[:instrument_id], user: current_user)
+    interest.destroy
+    render json: { interest_id: interest.id, current_user: current_user }
   end
 
 private
-  def user_params
-    params.require(:interest).permit(:user_id, :instrument_id)
+  def interest_params
+    params.require(:interest).permit(:instrument_id, :user_id)
   end
 end

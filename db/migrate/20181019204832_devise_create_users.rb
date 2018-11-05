@@ -12,7 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :age, null: false, default: ""
       t.string :role, null: false, default: "student"
       t.string :ability
-      t.integer :zip
+      t.text :zip
       t.text :short_bio
       t.text :long_bio
       t.string :lesson_location
