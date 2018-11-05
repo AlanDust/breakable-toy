@@ -7,7 +7,6 @@ class Api::V1::UsersController < ApplicationController
 
   def create
   user = User.new(user_params)
-
     if user.save
       render json: user
     else
@@ -21,6 +20,6 @@ class Api::V1::UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :bio, :lesson_location)
+    params.require(:user).permit(:email, :id, :first_name, :last_name, :short_bio, :long_bio, :lesson_location, :zip, :encrypted_password, :age, :profile_photo, :role)
   end
 end

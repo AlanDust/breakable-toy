@@ -17,6 +17,8 @@ class Api::V1::InstrumentsController < ApplicationController
 
   def show
     render json: Instrument.find(params[:id])
+    # instrument = InstrumentSerializer.new(Instrument.find(params[:id]), scope: scope, root: false)
+    # render json: { instrument: instrument, current_user: current_user }
   end
 
   private

@@ -8,9 +8,16 @@ class TeacherTile extends Component {
     }
   }
 
+
   render() {
+
+    let deleteTeacherFeature
+    if (this.props.current_user.role === "teacher" && this.props.current_user.id === this.props.id){
+      deleteTeacherFeature = <button className="delete-button" onClick ={this.props.handleDelete} type="delete" value="delete" ></button>
+    }
     return(
       <div className="large-12 medium-12 small-12 column users">
+        {deleteTeacherFeature}
         <Link to={`/instruments/${this.props.instrument_id}/users/${this.props.id}`}>
           <div className="large-1 medium-1 small-12 column">
             <img className="index-page-image" src={this.props.picture} />
