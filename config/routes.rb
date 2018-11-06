@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get '/instruments', to: 'homes#index'
   get '/instruments/:id', to: 'homes#index'
   get '/instruments/:instrument_id/users/:id', to: 'homes#index'
+  get '/zipcodes', to: 'zipcodes#search'
 
 end
