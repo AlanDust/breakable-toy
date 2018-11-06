@@ -42,6 +42,7 @@ class IndividualTeacherContainer extends Component {
           lesson_location = {this.state.teacherData.lesson_location}
           profile_photo = {this.state.teacherData.profile_photo}
           zip = {this.state.teacherData.zip}
+          calendar = {this.state.teacherData.calendar}
         />
       </div>
     )

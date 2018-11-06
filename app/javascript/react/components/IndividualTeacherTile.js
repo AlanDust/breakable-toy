@@ -16,6 +16,7 @@ const IndividualTeacherTile = props => {
         </div>
         <h3 className="teacher-show-bio">{props.long_bio}</h3>
       </div>
+      <iframe className="google-calendar" src={props.calendar}></iframe>
     </div>
   )
 }

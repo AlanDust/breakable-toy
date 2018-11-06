@@ -24,3 +24,10 @@
   height: auto;
   margin-bottom: 5rem;
 }
+
+.google-calendar {
+  align: center;
+  height: 50rem;
+  width: 95%;
+  margin: 3rem;
+}

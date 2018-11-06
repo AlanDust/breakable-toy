@@ -170,6 +170,7 @@ class TeachersContainer extends Component {
           instrument_id={this.props.params.id}
           handleDelete = {handleDelete}
           current_user = {this.state.current_user}
+          calendar = {user.calendar}
         />
       )
     })
