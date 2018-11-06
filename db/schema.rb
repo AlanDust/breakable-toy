@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_212449) do
     t.text "short_bio"
     t.text "long_bio"
     t.string "lesson_location"
+    t.text "calendar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

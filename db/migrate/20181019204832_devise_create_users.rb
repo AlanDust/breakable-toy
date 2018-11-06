@@ -16,6 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.text :short_bio
       t.text :long_bio
       t.string :lesson_location
+      t.text :calendar
 
       ## Recoverable
       t.string   :reset_password_token
