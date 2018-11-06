@@ -11,6 +11,7 @@ class TeachersContainer extends Component {
       interests: [],
       interestId: "",
       currentInstrument: "",
+      zipCodeArray: [],
       error: ""
     }
     this.addTeacher = this.addTeacher.bind(this)
@@ -18,6 +19,34 @@ class TeachersContainer extends Component {
     this.postTeacher = this.postTeacher.bind(this)
     this.deleteInterest = this.deleteInterest.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.zipCode = this.zipCode.bind(this)
+  }
+
+
+  zipCode(event) {
+    event.preventDefault();
+    fetch(`https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/vkdAi7ka67oBtbu7flnAcQEKiI31oolmk1KFkKWtrcbvISaGkgviTuf2HVKnqf4w/radius.json/${this.state.current_user.zip}/${event.target.value}/miles`)
+    .then(response => {
+      if (response.ok) {
+        response
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      debugger
+      let newZipCodeArray = [];
+      response.zip_codes.forEach((zipcode) => {
+        let zipCode = zipcode.zip_code
+        newZipCodeArray.push(zipCode)
+      })
+      this.setState ({ zipCodeArray: newZipCodeArray})
+    })
+    .catch(error => console.error('Error:', error));
   }
 
   addTeacher(payload) {
@@ -79,8 +108,6 @@ class TeachersContainer extends Component {
 
   deleteInterest(payload) {
     event.preventDefault();
-    console.log("In handleClick")
-    console.log(this.state.interestId)
     fetch(`/api/v1/instruments/${this.props.params.id}/interests/delete`, {
       method: 'DELETE',
       headers: {
@@ -153,26 +180,29 @@ class TeachersContainer extends Component {
 
   render() {
     let users = this.state.userList.map(user => {
-      let handleDelete = () => {
-        this.handleClick(user.id)
+      debugger
+      if (this.state.zipCodeArray.includes(user.zip.toString())){
+        let handleDelete = () => {
+          this.handleClick(user.id)
+        }
+        return(
+          <TeacherTile
+            key={user.id}
+            id={user.id}
+            firstName={user.first_name}
+            lastName={user.last_name}
+            email={user.email}
+            picture={user.profile_photo}
+            short_bio={user.short_bio}
+            lessonLocation={user.lesson_location}
+            zip={user.zip}
+            instrument_id={this.props.params.id}
+            handleDelete = {handleDelete}
+            current_user = {this.state.current_user}
+            calendar = {user.calendar}
+          />
+        )
       }
-      return(
-        <TeacherTile
-          key={user.id}
-          id={user.id}
-          firstName={user.first_name}
-          lastName={user.last_name}
-          email={user.email}
-          picture={user.profile_photo}
-          short_bio={user.short_bio}
-          lessonLocation={user.lesson_location}
-          zip={user.zip}
-          instrument_id={this.props.params.id}
-          handleDelete = {handleDelete}
-          current_user = {this.state.current_user}
-          calendar = {user.calendar}
-        />
-      )
     })
     let addTeacherFeature
     if (this.state.current_user.role === "teacher"){
@@ -181,12 +211,26 @@ class TeachersContainer extends Component {
       addTeacherFeature = "Click on a teacher to learn more!"
     }
 
+
+
     return(
       <div>
         <div className="instrument-lesson-teachers-heading">
           <p>{this.state.currentInstrument} Lesson Teachers</p>
         </div>
-        <div className="center-teacher-button">
+        <div className="large-6 medium-6 small-12 column">
+          <p>Teacher Distance</p>
+          <select onChange={this.zipCode}>
+            <option>Choose a distance to find a teacher</option>
+            <option value="10">10 Miles</option>
+            <option value="20">20 Miles</option>
+            <option value="30">30 Miles</option>
+            <option value="40">40 Miles</option>
+            <option value="50">50 Miles</option>
+            <option value="3000">Anywhere</option>
+          </select>
+        </div>
+        <div className="large-6 medium-6 small-12 column center-teacher-button">
           {addTeacherFeature}
         </div>
         {users}
