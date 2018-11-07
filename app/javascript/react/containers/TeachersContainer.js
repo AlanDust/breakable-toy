@@ -24,7 +24,7 @@ class TeachersContainer extends Component {
 
   zipCode(event) {
     event.preventDefault();
-    fetch(`https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/${process.env.RADIUS_KEY}/radius.json/${this.state.current_user.zip}/${event.target.value}/miles`)
+    fetch(`/api/v1/instruments/${this.props.params.id}/users/search?zip=${this.state.current_user.zip}&distance=${event.target.value}`)
     .then(response => {
       if (response.ok) {
         response
@@ -37,12 +37,7 @@ class TeachersContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      let newZipCodeArray = [];
-      response.zip_codes.forEach((zipcode) => {
-        let zipCode = zipcode.zip_code
-        newZipCodeArray.push(zipCode)
-      })
-      this.setState ({ zipCodeArray: newZipCodeArray})
+      this.setState ({ zipCodeArray: response.data})
     })
     .catch(error => console.error('Error:', error));
   }

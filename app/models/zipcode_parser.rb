@@ -8,11 +8,12 @@ class ZipcodeParser
     @data = []
   end
 
-  def search(query)
-    response = HTTParty.get("https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/vkdAi7ka67oBtbu7flnAcQEKiI31oolmk1KFkKWtrcbvISaGkgviTuf2HVKnqf4w/radius.json/${this.state.current_user.zip}/${event.target.value}/miles")
+  def search(zip, distance)
+    search_url = "https://www.zipcodeapi.com/rest/#{ENV["RADIUS_KEY"]}/radius.json/#{zip}/#{distance}/miles"
+    response = HTTParty.get(search_url)
+    response["zip_codes"].each do |zipcode|
 
-    response["results"].each do |zipcode|
-
-
+      @data << zipcode["zip_code"]
+    end
   end
 end
