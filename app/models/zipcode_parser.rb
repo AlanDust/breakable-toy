@@ -1,5 +1,4 @@
 require 'httparty'
-require 'pry'
 
 class ZipcodeParser
   attr_reader :data
