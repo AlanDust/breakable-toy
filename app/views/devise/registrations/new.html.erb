@@ -35,6 +35,11 @@
     </div>
 
     <div class="field">
+      <%= f.label "Upload Profile Photo (only if you are a teacher)" %>
+    </div>
+    <%= f.file_field :profile_photo %>
+
+    <div class="field">
       <%= f.label :short_bio, "Short Biography (only fill out if you are a teacher)" %>
       <%= f.text_field :short_bio, autofocus: true, autocomplete: "short_bio" %>
     </div>
