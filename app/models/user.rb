@@ -10,7 +10,7 @@ class User < ApplicationRecord
   validates :encrypted_password, presence: true
   validates :age, presence: true
   validates :role, presence: true
-
+  mount_uploader :profile_photo, ProfilePhotoUploader
 
   has_many :student_contracts, class_name: "Contract", foreign_key: :student_id
   has_many :teachers, through: :student_contract, source: :teacher

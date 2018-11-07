@@ -22,10 +22,9 @@ class TeachersContainer extends Component {
     this.zipCode = this.zipCode.bind(this)
   }
 
-
   zipCode(event) {
     event.preventDefault();
-    fetch(`https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/vkdAi7ka67oBtbu7flnAcQEKiI31oolmk1KFkKWtrcbvISaGkgviTuf2HVKnqf4w/radius.json/${this.state.current_user.zip}/${event.target.value}/miles`)
+    fetch(`https://cors-anywhere.herokuapp.com/zipcodeapi.com/rest/${process.env.RADIUS_KEY}/radius.json/${this.state.current_user.zip}/${event.target.value}/miles`)
     .then(response => {
       if (response.ok) {
         response
@@ -38,7 +37,6 @@ class TeachersContainer extends Component {
     })
     .then(response => response.json())
     .then(response => {
-      debugger
       let newZipCodeArray = [];
       response.zip_codes.forEach((zipcode) => {
         let zipCode = zipcode.zip_code
@@ -180,8 +178,7 @@ class TeachersContainer extends Component {
 
   render() {
     let users = this.state.userList.map(user => {
-      debugger
-      if (this.state.zipCodeArray.includes(user.zip.toString())){
+      if(this.state.zipCodeArray.includes(user.zip.toString())){
         let handleDelete = () => {
           this.handleClick(user.id)
         }
@@ -192,7 +189,7 @@ class TeachersContainer extends Component {
             firstName={user.first_name}
             lastName={user.last_name}
             email={user.email}
-            picture={user.profile_photo}
+            picture={user.profile_photo.url}
             short_bio={user.short_bio}
             lessonLocation={user.lesson_location}
             zip={user.zip}
@@ -210,8 +207,6 @@ class TeachersContainer extends Component {
     } else {
       addTeacherFeature = "Click on a teacher to learn more!"
     }
-
-
 
     return(
       <div>
