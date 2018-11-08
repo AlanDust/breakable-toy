@@ -1,0 +1,22 @@
+body {
+  background-color: #DDDDDD;
+}
+
+.float-right {
+  float: left;
+}
+
+.title-area {
+  margin: 0;
+}
+
+.header-title > a  {
+  width: 25%;
+  margin: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.hamburger {
+  margin: 0px;
+}
