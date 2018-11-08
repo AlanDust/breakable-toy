@@ -7,8 +7,8 @@
 
 .teacher-show-bio {
   font-family: 'Italianno';
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-top: 1rem;
 }
 
@@ -23,11 +23,15 @@
   width: 80%;
   height: auto;
   margin-bottom: 5rem;
+  margin-left: 10%;
+  margin-right: auto;
 }
 
 .google-calendar {
-  align: center;
+  align: auto;
   height: 50rem;
   width: 95%;
-  margin: 3rem;
+  margin-top: 3rem;
+  margin-right: 2%;
+  margin-left: 2%
 }

@@ -15,7 +15,6 @@ class User < ApplicationRecord
   has_many :student_contracts, class_name: "Contract", foreign_key: :student_id
   has_many :teachers, through: :student_contract, source: :teacher
 
-# methods that a teacher would call
   has_many :taught_contract, class_name: "Contract", foreign_key: :teacher_id
   has_many :students, through: :taught_contract, source: :student
 

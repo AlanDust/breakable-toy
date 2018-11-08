@@ -11,10 +11,13 @@
 </head>
 <body>
 
-  <nav class="top-bar">
+  <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/">BreakableToy</a></h1>
+        <h1 class="header-title"><a href="/">BreakableToy</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span></span></a>
       </li>
     </ul>
 
@@ -47,7 +50,7 @@
   <%- end -%>
   <%- if current_user -%>
     <%= javascript_tag do %>
-      window.currentUser = <%= current_user.to_json %>
+      window.currentUser = <%== current_user.to_json %>
     <% end %>
   <%- end -%>
   <%= javascript_pack_tag 'application' %>

@@ -1,7 +1,7 @@
 .instrument-image {
   height: 15rem;
   width: 15rem;
-  margin-left: 2rem;
+  align: auto;
   padding-bottom: 1rem;
   transition: all 1s ease;
   border-radius: 15%;
