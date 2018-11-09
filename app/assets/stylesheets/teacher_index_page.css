@@ -1,18 +1,21 @@
 .users {
   padding-left: 3rem;
   padding-right: 3rem;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #999999);
+  /* background: linear-gradient(#ffffff, #ffffff, #ffffff, #999999); */
   padding-bottom: 3rem;
-  font-family: 'Italianno', cursive;
+  font-family: 'Italianno';
+  border-bottom: 1px solid #999999;
 }
 
 .bio {
-  margin-top: 2rem;
+  margin-top: 5rem;
   font-family: 'Italianno';
 }
 
 .index-page-image {
   margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .delete-button {
@@ -52,5 +55,36 @@
   text-align: center;
   font-family: 'Italianno';
   font-size: 5rem;
-  background-color: #BBBBBB;
+  opacity: 1.0;
+}
+
+.background-image {
+  background: url("https://files.slack.com/files-pri/TB5A3V4P5-FE01T9WJE/old_music_score_background-wallpaper-1920x1200.jpg")  no-repeat;
+  background-size: cover;
+  height: 18rem;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.lesson-teacher-heading {
+  text-shadow: 2px 2px #999999;
+}
+
+.small-picture {
+  height: 16rem;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.name-city {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.x {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

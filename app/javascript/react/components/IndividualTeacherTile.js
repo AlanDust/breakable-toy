@@ -8,8 +8,8 @@ const IndividualTeacherTile = props => {
       <div>
         <div className="large-6 medium-6 small-12 column">
           <h1 className="teacher-show-name">{props.first_name} {props.last_name}</h1>
-          <h2 className="teacher-show-name">{props.email}</h2>
-          <h2 className="teacher-show-name">{props.lesson_location} {props.zip}</h2>
+          <h2 className="teacher-show-email">{props.email}</h2>
+          <h2 className="teacher-show-location">{props.lesson_location} {props.zip}</h2>
         </div>
         <div className="large-6 medium-6 small-12 column">
           <PictureTile
