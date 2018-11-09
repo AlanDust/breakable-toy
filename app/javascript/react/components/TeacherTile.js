@@ -27,7 +27,7 @@ class TeacherTile extends Component {
             <div className="large-4 medium-4 small-12 column small-picture">
               <img className="index-page-image" src={this.props.picture} />
             </div>
-            <div className="large-5 medium-5 small-12 column name-city">
+            <div className="large-4 medium-4 small-12 column name-city">
               <h1>{this.props.firstName} {this.props.lastName}</h1>
               <h3>{this.props.lessonLocation}</h3>
             </div>
