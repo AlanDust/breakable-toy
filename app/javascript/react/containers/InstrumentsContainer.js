@@ -51,9 +51,14 @@ class InstrumentContainer extends Component {
 
     return (
       <div>
-        <h1 className="welcome"> Welcome to the Music Lesson Teacher Finder </h1>
-        <h3 className="sub-welcome"> {greeting} </h3>
-        {instrumentTiles}
+        <div className="header">
+          <h1 className="welcome"> Duet </h1>
+          <h2 className="duet-description"> A website to connect music teachers with students</h2>
+          <h3 className="sub-welcome"> {greeting} </h3>
+        </div>
+        <div className="instrument-tiles">
+          {instrumentTiles}
+        </div>
       </div>
     )
   }

@@ -205,8 +205,10 @@ class TeachersContainer extends Component {
 
     return(
       <div>
+        <div className="background-image">
+        </div>
         <div className="instrument-lesson-teachers-heading">
-          <p>{this.state.currentInstrument} Lesson Teachers</p>
+          <p className="lesson-teacher-heading">{this.state.currentInstrument} Lesson Teachers</p>
         </div>
         <div className="large-6 medium-6 small-12 column">
           <p>Teacher Distance</p>
@@ -223,7 +225,9 @@ class TeachersContainer extends Component {
         <div className="large-6 medium-6 small-12 column center-teacher-button">
           {addTeacherFeature}
         </div>
-        {users}
+        <div className="hover-on-teacher">
+          {users}
+        </div>
       </div>
     )
   }
