@@ -9,7 +9,7 @@ class Api::V1::InstrumentsController < ApplicationController
     newInstrument = Instrument.new(instrument_params)
 
     if newInstrument.save
-      render json: newBeer
+      render json: newInstrument
     else
       render json: { errors: newInstrument.errors.full_messages }, status: :unprocessable_entity
     end
