@@ -208,7 +208,7 @@ class TeachersContainer extends Component {
         <div className="background-image">
         </div>
         <div className="instrument-lesson-teachers-heading">
-          <p className="lesson-teacher-heading">{this.state.currentInstrument} Lesson Teachers</p>
+          <h2 className="lesson-teacher-heading">{this.state.currentInstrument} Lesson Teachers</h2>
         </div>
         <div className="large-6 medium-6 small-12 column">
           <p>Teacher Distance</p>
