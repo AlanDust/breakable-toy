@@ -27,3 +27,5 @@ Carrierwave
 Foundation
 Postgresql
 CSS
+
+To run tests, run both $ bundle install and $ yarn install in the command line.  To run the model tests, run $ rspec.  To run the feature test, run $ yarn test.
