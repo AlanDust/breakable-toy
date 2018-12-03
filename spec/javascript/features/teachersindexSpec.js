@@ -65,22 +65,37 @@ describe('TeachersContainer', () => {
   afterEach(fetchMock.restore)
 
   it('should have a list of teachers on the teacher index page', () => {
-    expect(wrapper.find(TeachersContainer)).toBePresent();
+    setTimeout(() => {
+      expect(wrapper.find(TeachersContainer)).toBePresent();
+    done()
+    }, 0)
   });
 
   it('should render an h2 tag', () => {
-    expect(wrapper.find('h2')).toBePresent();
+    setTimeout(() => {
+      expect(wrapper.find('h2')).toBePresent();
+    done()
+    }, 0)
   });
 
   it('should render an p tag', () => {
-    expect(wrapper.find('p')).toBePresent();
+    setTimeout(() => {
+      expect(wrapper.find('p')).toBePresent();
+    done()
+    }, 0)
   });
 
   it('should render the details of the lesson teachers', () => {
-    expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    setTimeout(() => {
+      expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    done()
+    }, 0)
   });
 
   it('should render the details of the lesson teachers', () => {
-    expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    setTimeout(() => {
+      expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    done()
+    }, 0)
   });
 })
