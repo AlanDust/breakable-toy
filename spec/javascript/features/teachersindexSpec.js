@@ -64,13 +64,38 @@ describe('TeachersContainer', () => {
 
   afterEach(fetchMock.restore)
 
-  describe('teacher show page', () => {
-    it('should render the correct instrument on the page', (done) => {
-      setTimeout(() => {
-        instrument = wrapper.find('.currentInstrument')
-        expect(instrument.text()).toEqual("Flute")
-        done()
-      }, 0)
-    });
-  })
+  it('should have a list of teachers on the teacher index page', () => {
+    setTimeout(() => {
+      expect(wrapper.find(TeachersContainer)).toBePresent();
+    done()
+    }, 0)
+  });
+
+  it('should render an h2 tag', () => {
+    setTimeout(() => {
+      expect(wrapper.find('h2')).toBePresent();
+    done()
+    }, 0)
+  });
+
+  it('should render an p tag', () => {
+    setTimeout(() => {
+      expect(wrapper.find('p')).toBePresent();
+    done()
+    }, 0)
+  });
+
+  it('should render the details of the lesson teachers', () => {
+    setTimeout(() => {
+      expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    done()
+    }, 0)
+  });
+
+  it('should render the details of the lesson teachers', () => {
+    setTimeout(() => {
+      expect(wrapper.find('h2').text()).toContain("Lesson Teachers");
+    done()
+    }, 0)
+  });
 })
