@@ -59,7 +59,7 @@
 }
 
 .background-image {
-  background: url("https://files.slack.com/files-pri/TB5A3V4P5-FE01T9WJE/old_music_score_background-wallpaper-1920x1200.jpg")  no-repeat;
+  background: url("https://s3.amazonaws.com/duet-production/uploads/user/old_music_score_background-wallpaper-1920x1080.jpg")  no-repeat;
   background-size: cover;
   height: 18rem;
   -webkit-filter: grayscale(100%);
