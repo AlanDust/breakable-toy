@@ -43,10 +43,14 @@ class InstrumentContainer extends Component {
     })
 
     let greeting
-    if (this.state.current_user.role === "teacher"){
-      greeting = "Click on an instrument to add yourself as a teacher"
+    if (this.state.current_user.role === undefined){
+      greeting = "Please sign in to get started.  If you do not have an account yet, please sign up!"
     } else {
-      greeting = "Click on an instrument to find a teacher"
+      if (this.state.current_user.role === "teacher"){
+        greeting = "Click on an instrument to add yourself as a teacher"
+      } else {
+        greeting = "Click on an instrument to find a teacher"
+      }
     }
 
     return (
